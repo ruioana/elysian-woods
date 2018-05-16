@@ -1,0 +1,354 @@
+/*****************
+GENERAL STYLES
+******************/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    
+}
+
+
+/****************
+LINK STYLES
+******************/
+
+a {
+    text-decoration: none;
+    color: #738aa1;
+}
+
+a:hover {
+    color: #c0995f;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+a:after {
+    color: #708090;
+}
+
+/*********************
+NAVBAR AREA STYLES
+**********************/
+
+#home-section {
+    font-family: 'Parisienne', cursive;
+    color: #ddbf9d;
+}
+
+.navbar {
+    background-color:rgba(243,243,243, 0.5);
+    font-family: 'Shadows Into Light', cursive;
+}
+
+
+
+/*************************
+JUMBOTRON AREA STYLES
+**************************/
+
+
+.jumbotron {
+    margin: 0 20px 10px 20px;
+    background: rgba(255,255,240, 0.1);
+}
+
+.container {
+    text-align: center;
+}
+
+.container .display-4 {
+    font-family: 'Parisienne', cursive;
+    font-size: 5.5em;
+    line-height: 1.5;
+    font-style: italic;
+    color: #ddbf9d;
+}
+
+.lead {
+    width: 160px;
+    padding-bottom: 20px;
+}
+
+
+
+/************************
+GALLERY AREA STYLES
+**************************/
+
+#gallery {
+    max-width: 900px;
+    margin: 0 auto; /*center aligned*/
+    padding: 0;
+    font-size: 0; /* Change it back to normal font size if have captions */
+    list-style: none;
+}
+
+#gallery li {
+    display: inline-block;
+    *display: inline;/*for IE6 - IE7*/
+    width: 25%;
+    vertical-align: middle;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* The wrapper for each item */
+
+.rig-cell {
+    margin: 12px;
+    box-shadow: 0 0 6px rgba(0,0,0,0.3);
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+/*  image layer  */
+
+.rig-img {
+    display: block;
+    width: 102%;
+    height: auto;
+    border: none;
+    transform: scale(1);
+    transition: all 1s;
+}
+
+#gallery li:hover .rig-img {
+    transform: scale(1.08);
+}
+
+/* Overlay layer */
+
+.rig-overlay {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    background: rgba(244,237,162, 0.4) no-repeat center 20%;
+    background-size: 50px 50px;
+    opacity: 0;
+    filter: alpha(opacity=0);/*For IE6 - IE8*/
+    transition: all 0.8s;
+}
+
+#gallery li:hover .rig-overlay {
+    opacity: 0.5;
+}
+
+/* For captions */
+
+.rig-text {
+    display: block;
+    padding: 0 30px;
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: normal!important;
+    top: 40%;
+    color:rgba(245,245,220, 0.8);
+    opacity: 0;
+    filter: alpha(opacity=0);/*For older IE*/
+    transform: translateY(-20px);
+    transition: all .3s;
+}
+
+#gallery li:hover .rig-text {
+    transform: translateY(0px);
+    opacity: 0.9;
+
+}
+
+
+/* *********************************
+MEDIA QUERY - GALLERY AREA STYLES
+************************************/
+
+@media (max-width: 9000px) {
+    #gallery li {
+        width: 25%;
+    }
+}
+
+@media (max-width: 700px) {
+    #gallery li {
+        width: 33.33%;
+    }
+}
+
+@media (max-width: 550px) {
+    #gallery li {
+        width: 50%;
+    }
+
+    .rig-text {
+        font-size: 14.5px;
+    }
+}
+
+
+/* *********************************
+    ABOUT AREA STYLES
+************************************/
+
+.about {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap; 
+    justify-content: center; 
+     align-items: center; 
+    align-content: center;
+    margin: 0 auto;
+    padding: 3.5% 5%; 
+    font-family: 'Nunito Sans', sans-serif;
+
+}
+
+.profile-photo {
+    clear: both;
+    display: block;
+    max-width: 200px;
+    margin: 0 auto 30px;
+    border-radius: 90%;
+  }
+
+  h3 {
+    font-family: 'Shadows Into Light', cursive;
+    color: rgba(182,138,137, 1);
+    padding-bottom: 20px;
+  }
+
+  .about .about-text {
+    font-size: 18.5px;
+    text-align: center;
+    width: 100%;
+}
+
+.about .about-text a .fab {
+    color: #f45800;
+    padding-top: 30px;
+
+}
+
+.about .about-text a .fab:hover {
+    color: rgba(244,88,0, 0.5);
+    text-shadow: 1px 0.5px 0 #ff6c19;
+}
+
+.about .about-text a .fab:after {
+    color: rgba(226, 136, 84, 0.671);
+}
+
+
+
+
+/* *********************************
+    FOOTER AREA STYLES
+************************************/
+
+footer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap; 
+    justify-content: space-around; 
+     align-items: center; 
+    align-content: center;
+    background-image: url('../img/foggy_birds.png');
+    color: rgba(182, 128, 48, 0.753);
+    padding: 75px 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+footer ul {
+    display: flex;
+}
+
+footer ul li .fab {
+    flex-direction: column;
+    justify-content: space-around;
+    display: inline-block;
+    padding: 0 0;
+    width: 75px;
+    height: 60px;
+    line-height: 80px;
+    margin: 0 10px;
+}
+
+footer p {
+    font-size: 15px;
+    opacity: 0.6;
+    align-self: center;
+    color: #b68a89;
+}
+
+footer div .icon-copyright {
+    font-size: 9.5px;
+    text-align: center;
+}
+
+footer div .copyright {
+    font-size: 15px;
+    text-transform: none;
+    text-align: center;
+}
+
+
+
+/* *********************************
+MEDIA QUERY - ALL AREAS STYLES
+************************************/
+
+/****** big screens *******/
+
+@media screen and (max-width: 9000px) {
+   
+    /* jumbotron style - title */
+
+   .jumbotron .container .display-4 {
+    font-size: 6.5em;
+    }
+}
+
+/****** phones ******/
+
+@media screen and (max-width: 550px) {
+
+/* jumbotron style - title */
+
+   .jumbotron .container .display-4 {
+        font-size: 43px;
+   }
+
+   /* about section paragraphs */
+
+   #about-section .about-text {
+       font-size: 14px;
+   }
+
+   /* footer - paragraph text size */
+
+   #contact-section .icon-copyright {
+       font-size: 8.5px;
+   }
+}
+
+
+
+
+
+
+
